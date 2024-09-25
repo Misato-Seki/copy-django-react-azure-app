@@ -55,11 +55,13 @@ jobs:
             !venv/
       
       - name: Django Migrate
-        run: python manage.py migrate
+        run: |
+        cd backend
+        python manage.py migrate
 
       - name: Create Superuser
         run: |
-          echo "from django.contrib.auth.models import User; User.objects.create_superuser('${{ secrets.DJANGO_SUPERUSER_NAME }}', '${{ secrets.DJANGO_SUPERUSER_EMAIL }}', '${{ secrets.DJANGO_SUPERUSER_PASSWORD }}')" | python manage.py shell
+          cd backend | echo "from django.contrib.auth.models import User; User.objects.create_superuser('${{ secrets.DJANGO_SUPERUSER_NAME }}', '${{ secrets.DJANGO_SUPERUSER_EMAIL }}', '${{ secrets.DJANGO_SUPERUSER_PASSWORD }}')" | python manage.py shell
 
 
   deploy:
