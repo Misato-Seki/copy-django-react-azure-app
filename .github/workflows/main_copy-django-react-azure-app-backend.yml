@@ -61,7 +61,7 @@ jobs:
 
       - name: Create Superuser
         run: |
-          cd backend | echo "from django.contrib.auth.models import User; User.objects.create_superuser('${{ secrets.DJANGO_SUPERUSER_NAME }}', '${{ secrets.DJANGO_SUPERUSER_EMAIL }}', '${{ secrets.DJANGO_SUPERUSER_PASSWORD }}')" | python manage.py shell
+          cd backend; echo "from django.contrib.auth.models import User; User.objects.create_superuser('${{ secrets.DJANGO_SUPERUSER_NAME }}', '${{ secrets.DJANGO_SUPERUSER_EMAIL }}', '${{ secrets.DJANGO_SUPERUSER_PASSWORD }}')" | python manage.py shell
 
 
   deploy:
