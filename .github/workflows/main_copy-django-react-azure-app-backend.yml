@@ -56,8 +56,8 @@ jobs:
       
       - name: Django Migrate
         run: |
-        cd backend
-        python manage.py migrate
+          cd backend
+          python manage.py migrate
 
       - name: Create Superuser
         run: |
