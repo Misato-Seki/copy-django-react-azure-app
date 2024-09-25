@@ -1,3 +1,5 @@
+memo
+
 api フォルダ
 
 役割: API（Application Programming Interface）を管理するためのフォルダ。
