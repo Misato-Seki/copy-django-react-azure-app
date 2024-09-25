@@ -54,14 +54,14 @@ jobs:
             backend/release.zip
             !venv/
       
-      - name: Django Migrate
-        run: |
-          cd backend
-          python manage.py migrate
+      # - name: Django Migrate
+      #   run: |
+      #     cd backend
+      #     python manage.py migrate
 
-      - name: Create Superuser
-        run: |
-          cd backend; echo "from django.contrib.auth.models import User; User.objects.create_superuser('${{ secrets.DJANGO_SUPERUSER_NAME }}', '${{ secrets.DJANGO_SUPERUSER_EMAIL }}', '${{ secrets.DJANGO_SUPERUSER_PASSWORD }}')" | python manage.py shell
+      # - name: Create Superuser
+      #   run: |
+      #     cd backend; echo "from django.contrib.auth.models import User; User.objects.create_superuser('${{ secrets.DJANGO_SUPERUSER_NAME }}', '${{ secrets.DJANGO_SUPERUSER_EMAIL }}', '${{ secrets.DJANGO_SUPERUSER_PASSWORD }}')" | python manage.py shell
 
 
   deploy:
