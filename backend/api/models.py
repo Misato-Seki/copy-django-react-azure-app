@@ -36,7 +36,7 @@ class Project(models.Model):
     def __str__(self):
         return self.name
     
-
+# 確認用
 class TestModel(models.Model):
     name = models.CharField(unique=True, max_length=100)
     created = models.DateTimeField(auto_now_add=True)
