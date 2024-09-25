@@ -1,0 +1,4 @@
+; デプロイのたびに最新のコードを自動的にビルドして、アプリケーションを更新するかの設定
+
+[config]
+ SCM_DO_BUIL_DURING_DEPLOYMENT=true
