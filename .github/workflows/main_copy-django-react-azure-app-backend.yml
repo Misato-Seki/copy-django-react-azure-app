@@ -54,10 +54,10 @@ jobs:
             backend/release.zip
             !venv/
       
-      # - name: Django Migrate
-      #   run: |
-      #     cd backend
-      #     python manage.py migrate
+      - name: Django Migrate
+        run: |
+          cd backend
+          python manage.py migrate
 
       # - name: Create Superuser
       #   run: |
