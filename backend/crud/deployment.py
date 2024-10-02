@@ -5,7 +5,8 @@ from .settings import BASE_DIR
 
 # ウェブサイトがどこで動くかを決める
 # os.environ['WEBSITE_HOSTNAME']は、コンピュータやサーバーの中に隠されている環境変数からその名前を取り出す
-ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']]
+ALLOWED_HOSTS = [os.environ.get['BACKEND_HOSTNAME']]
+
 # CSRF（クロスサイトリクエストフォージェリ）という攻撃から守るための設定
 # CSRF_TRUSTED_ORIGINSは、「信頼できるウェブサイトのアドレス」をリストにして、
 # そこからのリクエストだけを受け付けるようにするものです。
