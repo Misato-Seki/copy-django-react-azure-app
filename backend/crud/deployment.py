@@ -34,8 +34,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# CORS_ALLOWED_ORIGINS = [
-# ]
+CORS_ALLOWED_ORIGINS = [
+    'https://agreeable-mud-00cbb0203.5.azurestaticapps.net'
+]
 
 # ウェブサイトで使うファイルがどこに保存されるかを指定する設定
 STRAGES = {
