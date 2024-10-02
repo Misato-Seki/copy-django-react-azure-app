@@ -18,7 +18,7 @@ DEBUG = False
 # SECLET_KEYは、ウェブサイトの秘密の鍵のようなもの
 # os.environ['MY_SECLET_KEY']は、この大事な秘密の鍵を、
 # サーバーやコンピュータの中に安全に保存されている「環境変数」から読み込んでいます。
-SECLET_KEY = os.environ['MY_SECLET_KEY']
+SECRET_KEY = os.environ['MY_SECRET_KEY']
 
 # 「ミドルウェア」は、ウェブサイトのリクエストを受け取って、
 # 色々な処理をしてくれる手助け役みたいなものです。
