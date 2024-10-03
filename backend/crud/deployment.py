@@ -2,9 +2,11 @@
 import os
 from .settings import *
 from .settings import BASE_DIR
+from dotenv import load_dotenv
 
 # ウェブサイトがどこで動くかを決める
 # os.environ['WEBSITE_HOSTNAME']は、コンピュータやサーバーの中に隠されている環境変数からその名前を取り出す
+load_dotenv()
 ALLOWED_HOSTS = [os.environ.get['BACKEND_HOSTNAME']]
 
 # CSRF（クロスサイトリクエストフォージェリ）という攻撃から守るための設定
