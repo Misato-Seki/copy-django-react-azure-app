@@ -2,24 +2,23 @@
 import os
 from .settings import *
 from .settings import BASE_DIR
-from dotenv import load_dotenv
 
 # ウェブサイトがどこで動くかを決める
 # os.environ['WEBSITE_HOSTNAME']は、コンピュータやサーバーの中に隠されている環境変数からその名前を取り出す
-load_dotenv()
-ALLOWED_HOSTS = [os.environ.get['BACKEND_HOSTNAME']]
+ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']]
 
 # CSRF（クロスサイトリクエストフォージェリ）という攻撃から守るための設定
 # CSRF_TRUSTED_ORIGINSは、「信頼できるウェブサイトのアドレス」をリストにして、
 # そこからのリクエストだけを受け付けるようにするものです。
 # "https://" + os.environ['WEBSITE_HOSTNAME']は、
 # その信頼できるウェブサイトが何かを指定しているんです。
-CSRF_TRUSTED_ORIGINS = ["https://" + os.environ['WEBSITE_HOSTNAME']]
+CSRF_TRUSTED_ORIGINS = ['https://'+os.environ['WEBSITE_HOSTNAME']]
+
 # プログラムのデバッグモードをオフにするという設定
 # 本番環境（実際に人が使う状態）では危険なので、Falseにする
 DEBUG = False
-# SECLET_KEYは、ウェブサイトの秘密の鍵のようなもの
-# os.environ['MY_SECLET_KEY']は、この大事な秘密の鍵を、
+# SECRET_KEYは、ウェブサイトの秘密の鍵のようなもの
+# os.environ['MY_SECRET_KEY']は、この大事な秘密の鍵を、
 # サーバーやコンピュータの中に安全に保存されている「環境変数」から読み込んでいます。
 SECRET_KEY = os.environ['MY_SECRET_KEY']
 
@@ -42,7 +41,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 # ウェブサイトで使うファイルがどこに保存されるかを指定する設定
-STRAGES = {
+STORAGES = {
     "default": {
         # ファイルをサーバーのファイルシステム（コンピュータのフォルダやファイルの仕組み）に保存することを意味
         "BACKEND": "django.core.files.storage.FileSystemStorage",
